@@ -187,22 +187,22 @@ export default function Contact() {
                   </span>
                 </a>
 
-                {/* EMAIL - Azul */}
+                {/* EMAIL - LARANJA/AMARELO (COR NOVA!) */}
                 <div
                   className="flex items-center justify-between p-4 rounded-xl bg-white/60 dark:bg-gray-800/40 
-                    backdrop-blur-md border border-blue-200/40 dark:border-blue-900/20 
-                    shadow-lg hover:shadow-blue-300/30 dark:hover:shadow-blue-900/40 
+                    backdrop-blur-md border border-orange-200/40 dark:border-orange-900/20 
+                    shadow-lg hover:shadow-orange-300/30 dark:hover:shadow-orange-900/40 
                     transition-all duration-300 hover:-translate-y-1 hover:scale-105 group"
                 >
                   <div
                     className="flex items-center space-x-3 cursor-pointer"
                     onClick={handleCopy}
                   >
-                    <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300">
+                    <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-orange-500 to-yellow-500 rounded-full flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300">
                       <Mail className="w-5 h-5 text-white" />
                     </div>
                     <div>
-                      <span className="text-gray-800 dark:text-gray-200 font-medium group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                      <span className="text-gray-800 dark:text-gray-200 font-medium group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors">
                         {email}
                       </span>
                     </div>
@@ -210,19 +210,19 @@ export default function Contact() {
 
                   <button
                     onClick={handleCopy}
-                    className="p-2 rounded-lg hover:bg-blue-100 dark:hover:bg-blue-900/30 transition-all duration-300 hover:scale-110"
+                    className="p-2 rounded-lg hover:bg-orange-100 dark:hover:bg-orange-900/30 transition-all duration-300 hover:scale-110"
                   >
                     {copied ? (
                       <Check className="w-5 h-5 text-green-500" />
                     ) : (
-                      <Copy className="w-5 h-5 text-blue-500 group-hover:text-blue-600" />
+                      <Copy className="w-5 h-5 text-orange-500 group-hover:text-orange-600" />
                     )}
                   </button>
                 </div>
               </div>
             </div>
 
-            {/* Form */}
+            {/* Form - CORES MELHORADAS */}
             <form onSubmit={handleSubmit} className="space-y-6 animate-fade-in-right">
               {/* Nome */}
               <div>
@@ -235,10 +235,11 @@ export default function Contact() {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 rounded-xl bg-white/70 dark:bg-gray-700/60 
+                  className="w-full px-4 py-3 rounded-xl bg-white/80 dark:bg-gray-800/80 
                     border border-gray-300 dark:border-gray-600 
                     focus:ring-2 focus:ring-purple-500 focus:border-purple-500 
-                    shadow-inner transition-all duration-300 hover:border-purple-300 dark:hover:border-purple-600"
+                    shadow-inner transition-all duration-300 hover:border-purple-300 dark:hover:border-purple-600
+                    text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400"
                   placeholder={t.contact.name}
                 />
               </div>
@@ -254,10 +255,11 @@ export default function Contact() {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 rounded-xl bg-white/70 dark:bg-gray-700/60 
+                  className="w-full px-4 py-3 rounded-xl bg-white/80 dark:bg-gray-800/80 
                     border border-gray-300 dark:border-gray-600 
                     focus:ring-2 focus:ring-purple-500 focus:border-purple-500 
-                    shadow-inner transition-all duration-300 hover:border-purple-300 dark:hover:border-purple-600"
+                    shadow-inner transition-all duration-300 hover:border-purple-300 dark:hover:border-purple-600
+                    text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400"
                   placeholder={t.contact.email}
                 />
               </div>
@@ -273,10 +275,11 @@ export default function Contact() {
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 rounded-xl bg-white/70 dark:bg-gray-700/60 
+                  className="w-full px-4 py-3 rounded-xl bg-white/80 dark:bg-gray-800/80 
                     border border-gray-300 dark:border-gray-600 
                     focus:ring-2 focus:ring-purple-500 focus:border-purple-500 
-                    shadow-inner transition-all duration-300 hover:border-purple-300 dark:hover:border-purple-600 resize-none"
+                    shadow-inner transition-all duration-300 hover:border-purple-300 dark:hover:border-purple-600 
+                    resize-none text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400"
                   placeholder={t.contact.message}
                 ></textarea>
               </div>
