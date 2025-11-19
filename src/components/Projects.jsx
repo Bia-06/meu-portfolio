@@ -23,8 +23,8 @@ export default function Projects() {
     },
     {
       ...t.projects.p2,
-      technologies: ['React', 'Node.js', 'Supabase', 'JavaScript', 'HTML/CSS'],
-      projectLink: 'https://bardoamorim.netlify.app/',
+      technologies: ['React', 'Node.js', 'JavaScript', 'CSS', 'HTML'],
+      projectLink: 'https://bardoamorim.com.br/',
       codeLink: 'https://github.com/Bia-06/bar-do-amorim',
       image: '/bardoamorimfinal.jpg'
     },
