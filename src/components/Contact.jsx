@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSettings } from '../App';
 import { Send, Github, Linkedin, Instagram, Mail, Copy, Check } from 'lucide-react';
+import emailjs from 'emailjs-com';
 
 // Partículas flutuantes para o Contact
 const FloatingParticles = () => (
@@ -24,17 +25,74 @@ export default function Contact() {
   const { t, language } = useSettings();
   const [copied, setCopied] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState('');
 
   useEffect(() => {
     setIsVisible(true);
+    
+    emailjs.init("xJ7oXDOH7prO0fsoo"); 
   }, []);
 
-  const email = "piresbeatriz067@hotmail.com";
+  const email = "beatrizpires067@gmail.com";
 
   const handleCopy = () => {
     navigator.clipboard.writeText(email);
     setCopied(true);
     setTimeout(() => setCopied(false), 1500);
+  };
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus('');
+
+    try {
+      const result = await emailjs.send(
+        'service_2nrg3fy',     // Service ID (EmailJS)
+        'template_1837zuf',    // Template ID (EmailJS)
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+          to_email: email,
+          reply_to: formData.email
+        }
+      );
+
+      if (result.status === 200) {
+        setSubmitStatus('success');
+        setFormData({ name: '', email: '', message: '' });
+        
+        // Mensagem de sucesso em PT/EN
+        alert(language === 'pt' 
+          ? 'Mensagem enviada com sucesso! Entrarei em contato em breve.' 
+          : 'Message sent successfully! I will contact you soon.'
+        );
+      }
+    } catch (error) {
+      console.error('Erro ao enviar:', error);
+      setSubmitStatus('error');
+      
+      alert(language === 'pt'
+        ? 'Erro ao enviar mensagem. Tente novamente ou me envie um email diretamente.'
+        : 'Error sending message. Please try again or email me directly.'
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -165,14 +223,18 @@ export default function Contact() {
             </div>
 
             {/* Form */}
-            <form className="space-y-6 animate-fade-in-right">
-              {/* INPUT */}
+            <form onSubmit={handleSubmit} className="space-y-6 animate-fade-in-right">
+              {/* Nome */}
               <div>
                 <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   {t.contact.name}
                 </label>
                 <input
                   type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
                   className="w-full px-4 py-3 rounded-xl bg-white/70 dark:bg-gray-700/60 
                     border border-gray-300 dark:border-gray-600 
                     focus:ring-2 focus:ring-purple-500 focus:border-purple-500 
@@ -181,12 +243,17 @@ export default function Contact() {
                 />
               </div>
 
+              {/* Email */}
               <div>
                 <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   {t.contact.email}
                 </label>
                 <input
                   type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
                   className="w-full px-4 py-3 rounded-xl bg-white/70 dark:bg-gray-700/60 
                     border border-gray-300 dark:border-gray-600 
                     focus:ring-2 focus:ring-purple-500 focus:border-purple-500 
@@ -195,12 +262,17 @@ export default function Contact() {
                 />
               </div>
 
+              {/* Mensagem */}
               <div>
                 <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   {t.contact.message}
                 </label>
                 <textarea
+                  name="message"
                   rows="5"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
                   className="w-full px-4 py-3 rounded-xl bg-white/70 dark:bg-gray-700/60 
                     border border-gray-300 dark:border-gray-600 
                     focus:ring-2 focus:ring-purple-500 focus:border-purple-500 
@@ -213,14 +285,21 @@ export default function Contact() {
               <div>
                 <button
                   type="submit"
+                  disabled={isSubmitting}
                   className="w-full px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-500 
                     text-white font-semibold rounded-xl shadow-xl 
                     hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 
-                    flex items-center justify-center group relative overflow-hidden"
+                    flex items-center justify-center group relative overflow-hidden
+                    disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
                 >
                   <span className="relative z-10 flex items-center">
-                    {t.contact.send}
-                    <Send className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" />
+                    {isSubmitting 
+                      ? (language === 'pt' ? 'Enviando...' : 'Sending...')
+                      : t.contact.send
+                    }
+                    {!isSubmitting && (
+                      <Send className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" />
+                    )}
                   </span>
                   <div className="absolute inset-0 bg-gradient-to-r from-pink-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </button>

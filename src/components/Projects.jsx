@@ -23,7 +23,7 @@ export default function Projects() {
     },
     {
       ...t.projects.p2,
-      technologies: ['React', 'Node.js', 'JavaScript', 'CSS', 'HTML'],
+      technologies: ['React', 'PHP', 'MySQL', 'JavaScript', 'CSS'],
       projectLink: 'https://bardoamorim.com.br/',
       codeLink: 'https://github.com/Bia-06/bar-do-amorim',
       image: '/bardoamorimfinal.jpg'
