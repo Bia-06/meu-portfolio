@@ -1,16 +1,31 @@
-# React + Vite
+# 👩‍💻 Beatriz Pires | Portfólio Pessoal
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Bem-vindo ao repositório do meu portfólio! Este projeto foi desenvolvido para reunir meus trabalhos, compartilhar minha trajetória e demonstrar minhas habilidades.
 
-Currently, two official plugins are available:
+O foco da construção deste site foi criar uma aplicação performática, com código limpo e uma interface intuitiva.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🔗 **[Acesse o portfólio online aqui](https://portfolio--beatriz.vercel.app/)**
+---
 
-## React Compiler
+## 🛠️ Tecnologias Utilizadas
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Este projeto foi construído pensando em informações:
 
-## Expanding the ESLint configuration
+- **Core** React, Vite, JavaScript
+- **Estilização:** Tailwind CSS (Responsivo + Dark Mode)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🚀 Funcionalidades
+
+- **Apresentação Pessoal:** Resumo sobre minha carreira e objetivos.
+- **Showcase de Projetos:** Galeria com meus principais trabalhos.
+- **Lista de Habilidades:** Visualização interativa das minhas techs.
+- **Temas:** Suporte a Light/Dark Mode.
+- **Internacionalização:** Inglês/Português.
+
+## 📦 Como rodar o projeto localmente
+
+Se você quiser clonar e rodar este projeto na sua máquina:
+
+1. **Clone o repositório:**
+   ```bash
+   git clone [https://github.com/SEU_USUARIO/NOME_DO_REPO.git](https://github.com/SEU_USUARIO/NOME_DO_REPO.git)

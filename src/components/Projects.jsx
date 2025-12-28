@@ -16,20 +16,27 @@ export default function Projects() {
   const projectsData = [
     {
       ...t.projects.p1,
-      technologies: ['React', 'Vite', 'TypeScript', 'Tailwind CSS', 'Radix UI'],
-      projectLink: 'https://mypersonal-library.vercel.app/',
-      codeLink: 'https://github.com/Bia-06/my-library-fixed',
-      image: '/libraryfinal.jpg'
+      technologies: ['React', 'Vite', 'JavaScript', 'Tailwind CSS', 'Supabase'],
+      projectLink: 'https://www.gerenciadin.com.br/',
+      codeLink: 'https://github.com/Bia-06/GerenciaDin',
+      image: '/gerenciadin.png'
     },
     {
       ...t.projects.p2,
+      technologies: ['React', 'Vite', 'TypeScript', 'Tailwind CSS', 'Radix UI'],
+      projectLink: 'https://mypersonal-library.vercel.app/',
+      codeLink: 'https://github.com/Bia-06/my-library-fixed',
+      image: '/libraryfinal.png'
+    },
+    {
+      ...t.projects.p3,
       technologies: ['React', 'PHP', 'MySQL', 'JavaScript', 'CSS'],
       projectLink: 'https://bardoamorim.com.br/',
       codeLink: 'https://github.com/Bia-06/bar-do-amorim',
       image: '/bardoamorimfinal.jpg'
     },
     {
-      ...t.projects.p3,
+      ...t.projects.p4,
       technologies: ['Python'],
       projectLink: 'https://github.com/UNIVEM-BCC-BSI/CPLP',
       codeLink: 'https://github.com/UNIVEM-BCC-BSI/CPLP/blob/main/C%C3%B3digoFinal.py',

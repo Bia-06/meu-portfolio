@@ -3,7 +3,7 @@ import { useSettings } from '../App';
 import { 
   SiReact, SiJavascript, SiNodedotjs, SiPython, SiMongodb,
   SiGithub, SiCplusplus, SiFigma, SiMysql, SiHtml5,
-  SiCss3, SiTailwindcss
+  SiCss3, SiTailwindcss, SiTypescript, SiSupabase, SiVite // Ícones novos importados aqui
 } from 'react-icons/si';
 import { FaJava } from 'react-icons/fa';
 import { VscVscode } from 'react-icons/vsc';
@@ -34,13 +34,17 @@ export default function Skills() {
     </div>
   );
 
+  // Lista atualizada com TypeScript, Vite e Supabase
   const skills = [
     { name: 'React', icon: <SiReact className="text-cyan-400" /> },
+    { name: 'TypeScript', icon: <SiTypescript className="text-blue-600" /> }, // Novo
     { name: 'JavaScript', icon: <SiJavascript className="text-yellow-400" /> },
+    { name: 'Vite', icon: <SiVite className="text-violet-500" /> }, // Novo
     { name: 'Tailwind CSS', icon: <SiTailwindcss className="text-sky-400" /> },
     { name: 'HTML', icon: <SiHtml5 className="text-orange-500" /> },
     { name: 'CSS', icon: <SiCss3 className="text-blue-500" /> },
     { name: 'Node.js', icon: <SiNodedotjs className="text-green-500" /> },
+    { name: 'Supabase', icon: <SiSupabase className="text-emerald-500" /> }, // Novo
     { name: 'Python', icon: <SiPython className="text-yellow-300" /> },
     { name: 'Java', icon: <FaJava className="text-red-500" /> },
     { name: 'C++', icon: <SiCplusplus className="text-blue-600" /> },
@@ -77,6 +81,8 @@ export default function Skills() {
 
           <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7 gap-[15px] justify-items-center">
             {skills.map((skill, i) => {
+              // Ajuste da lógica: com mais itens, o grid pode quebrar mais linhas.
+              // Mantendo a lógica de i >= 7 para tooltips, o que funciona bem para grids largos.
               const isSecondRow = i >= 7;
 
               return (

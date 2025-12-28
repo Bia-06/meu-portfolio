@@ -22,13 +22,13 @@ const content = {
     hero: {
       greeting: '<Olá, eu sou a',
       name: 'Beatriz',
-      title: 'Desenvolvedora Web Full Stack',
+      title: 'Desenvolvedora Full Stack',
       description: 'Apaixonada por criar soluções modernas e impactantes usando a tecnologia.',
     },
     about: {
       title: 'Sobre Mim',
-      p1: 'Me chamo Beatriz Pires, tenho 20 anos, busco constantemente aprender e aplicar novos conceitos. Tenho um forte interesse em desenvolvimento web, inteligência artificial e design de UI/UX.',
-      p2: 'Meu objetivo é usar minhas habilidades para construir aplicações que sejam não apenas funcionais, mas também intuitivas e bonitas. Estou sempre aberta a novos desafios e oportunidades de colaboração.',
+      p1: 'Sou a Beatriz Pires, tenho 20 anos e sou apaixonada por entender como as coisas funcionam por trás da interface. Tenho me aprofundado em desenvolvimento web, arquitetura de sistemas e inteligência artificial.',
+      p2: 'Busco criar aplicações onde a lógica seja limpa e o desempenho seja prioridade. Quero desenvolver soluções que resolvam problemas reais de forma inteligente. Estou pronta para novos desafios e parcerias.',
     },
     skills: {
       title: 'Minhas Habilidades',
@@ -38,16 +38,21 @@ const content = {
       title: 'Projetos',
       subtitle: 'Uma seleção dos meus trabalhos recentes.',
       p1: {
+        title: 'GerenciaDin',
+        description: 'Aplicação web Fullstack desenvolvida para simplificar o controle de receitas e despesas pessoais. Interface moderna, intuitiva e segura, permitindo que o usuário visualize sua saúde financeira através de dashboards e calendários interativos.',
+        tag: 'Website',
+      },
+      p2: {
         title: 'MyPersonal Library',
         description: 'Uma aplicação web moderna com interface intuitiva para gerenciar acervo bibliográfico, empréstimos e devoluções de forma eficiente.',
         tag: 'Website',
       },
-      p2: {
+      p3: {
         title: 'Bar do Amorim',
         description: 'Site completo e responsivo para um bar local, focado em modernizar a interação com o cliente e otimizar a gestão interna.',
         tag: 'Website',
       },
-      p3: {
+      p4: {
         title: 'Comparador de Preços (CPLP)',
         description: 'Um aplicativo que compara preços de restaurantes e lanchonetes para você fazer a melhor escolha.',
         tag: 'App',
@@ -76,13 +81,13 @@ const content = {
     hero: {
       greeting: "Hi, I'm",
       name: 'Beatriz',
-      title: 'Full Stack Web Developer',
+      title: 'Full Stack Developer',
       description: 'Passionate about creating modern and impactful solutions using technology.',
     },
     about: {
       title: 'About Me',
-      p1: 'My name is Beatriz Pires, I am 20 years old, and I constantly seek to learn and apply new concepts. I have a strong interest in web development, artificial intelligence, and UI/UX design.',
-      p2: 'My goal is to use my skills to build applications that are not only functional but also intuitive and beautiful. I am always open to new challenges and collaboration opportunities.',
+      p1: 'I am Beatriz Pires, 20 years old, and I am passionate about understanding how software works under the hood. I have been focusing on Web Development, Systems Architecture, and Artificial Intelligence.',
+      p2: 'My goal is to build applications where clean logic and performance are top priorities. I strive to develop intelligent solutions that solve real-world problems. I am ready for new challenges and collaborations.',
     },
     skills: {
       title: 'My Skills',
@@ -92,16 +97,21 @@ const content = {
       title: 'Projects',
       subtitle: 'A selection of my recent work.',
       p1: {
+        title: 'GerenciaDin',
+        description: 'A full-stack web application developed to simplify the control of personal income and expenses. Its modern, intuitive, and secure interface allows users to visualize their financial health through interactive dashboards and calendars.',
+        tag: 'Website',
+      },
+      p2: {
         title: 'MyPersonal Library',
         description: 'A modern web application with an intuitive interface to efficiently manage library collections, loans, and returns.',
         tag: 'Website',
       },
-      p2: {
+      p3: {
         title: 'Bar do Amorim',
         description: 'Complete and responsive website for a local bar, focused on modernizing customer interaction and optimizing internal management.',
         tag: 'Website',
       },
-      p3: {
+      p4: {
         title: 'Price Comparator (CPLP)',
         description: 'An application that compares restaurant and snack bar prices to help you make the best choice.',
         tag: 'App',
