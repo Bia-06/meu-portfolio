@@ -1,6 +1,5 @@
 import React, { useState, useEffect, createContext, useContext } from 'react';
 
-// Importe seus componentes
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -9,7 +8,6 @@ import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
-// --- DADOS DE CONTEÚDO (PARA TRADUÇÃO) ---
 const content = {
   pt: {
     nav: {
@@ -131,7 +129,6 @@ const content = {
   },
 };
 
-// --- CONTEXTO GLOBAL (PARA TEMA E IDIOMA) ---
 const SettingsContext = createContext();
 
 function SettingsProvider({ children }) {
@@ -141,10 +138,8 @@ function SettingsProvider({ children }) {
   useEffect(() => {
     const root = window.document.documentElement;
     
-    // Remove ambas as classes primeiro
     root.classList.remove('light', 'dark');
     
-    // Adiciona a classe correta
     root.classList.add(theme);
   }, [theme]);
 
@@ -163,10 +158,8 @@ function SettingsProvider({ children }) {
   );
 }
 
-// Exporte o hook para os componentes usarem
 export const useSettings = () => useContext(SettingsContext);
 
-// --- COMPONENTE PRINCIPAL ---
 export default function App() {
   return (
     <SettingsProvider>

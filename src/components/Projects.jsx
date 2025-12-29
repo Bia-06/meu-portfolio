@@ -12,7 +12,6 @@ export default function Projects() {
     setIsVisible(true);
   }, []);
 
-  // Dados dos projetos com tecnologias e imagens específicas
   const projectsData = [
     {
       ...t.projects.p1,
@@ -44,7 +43,6 @@ export default function Projects() {
     },
   ];
 
-  // Configuração do carrossel
   const projectsPerSlide = 3;
   const totalSlides = Math.ceil(projectsData.length / projectsPerSlide);
 
@@ -60,7 +58,6 @@ export default function Projects() {
     setCurrentSlide(index);
   };
 
-  // Partículas flutuantes
   const FloatingParticles = () => (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
       {[...Array(10)].map((_, i) => (
@@ -80,10 +77,8 @@ export default function Projects() {
 
   return (
     <section id="projects" className="relative py-20 bg-gradient-to-br from-white via-purple-50 to-pink-50 dark:from-gray-900 dark:via-purple-900/10 dark:to-pink-900/10 overflow-hidden">
-      {/* Background Animado */}
       <FloatingParticles />
       
-      {/* Gradiente animado no fundo */}
       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-purple-100/20 to-transparent dark:via-purple-900/5 animate-pulse-slow" />
       
       <div className="container mx-auto px-6 relative z-10">
@@ -97,9 +92,7 @@ export default function Projects() {
             {t.projects.subtitle}
           </p>
 
-          {/* Container do Carrossel - Só mostra navegação se tiver mais de 3 projetos */}
           <div className="relative">
-            {/* Botões de Navegação - Só aparecem se tiver mais de 3 projetos */}
             {projectsData.length > projectsPerSlide && (
               <>
                 <button
@@ -120,8 +113,7 @@ export default function Projects() {
               </>
             )}
 
-            {/* Container dos Cards - ADICIONADO PADDING VERTICAL PARA EVITAR CORTE */}
-            <div className="overflow-hidden py-6"> {/* ← Adicionei py-6 aqui */}
+            <div className="overflow-hidden py-6"> 
               <div 
                 className="flex transition-transform duration-500 ease-in-out"
                 style={{ 
@@ -135,7 +127,7 @@ export default function Projects() {
                     className="w-full flex-shrink-0"
                     style={{ width: `${100 / totalSlides}%` }}
                   >
-                    {/* ADICIONADO MAIS ESPAÇO ENTRE OS CARDS */}
+                   
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4">
                       {projectsData
                         .slice(
@@ -158,7 +150,6 @@ export default function Projects() {
               </div>
             </div>
 
-            {/* Indicadores (Bolinhas) - Só aparecem se tiver mais de 3 projetos */}
             {projectsData.length > projectsPerSlide && (
               <div className="flex justify-center mt-8 space-x-3">
                 {Array.from({ length: totalSlides }).map((_, index) => (
@@ -176,7 +167,6 @@ export default function Projects() {
               </div>
             )}
 
-            {/* Contador de projetos */}
             <div className="text-center mt-4">
               <span className="text-sm text-gray-500 dark:text-gray-400">
                 {projectsData.length} {language === 'pt' ? 'projetos' : 'projects'} 

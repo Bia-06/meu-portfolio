@@ -7,7 +7,6 @@ export default function ProjectCard({ project }) {
   
   return (
     <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden transition-all duration-300 transform hover:scale-105 hover:shadow-2xl border border-gray-100 dark:border-gray-700 h-full flex flex-col">
-      {/* Container da imagem - Altura fixa */}
       <div className="w-full h-48 relative overflow-hidden flex-shrink-0">
         {project.image ? (
           <img 
@@ -23,7 +22,6 @@ export default function ProjectCard({ project }) {
           </div>
         )}
         
-        {/* Badge da categoria */}
         <div className="absolute top-3 right-3 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm px-3 py-1 rounded-full">
           <span className="text-sm font-semibold text-purple-600 dark:text-purple-400">
             {project.tag}
@@ -31,7 +29,6 @@ export default function ProjectCard({ project }) {
         </div>
       </div>
       
-      {/* Conteúdo do card - Flex-grow para ocupar espaço restante */}
       <div className="p-6 flex flex-col flex-grow">
         <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
           {project.title}
@@ -41,7 +38,6 @@ export default function ProjectCard({ project }) {
           {project.description}
         </p>
 
-        {/* Tecnologias utilizadas */}
         <div className="mb-6">
           <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
             {language === 'pt' ? 'Tecnologias:' : 'Technologies:'}
@@ -60,7 +56,6 @@ export default function ProjectCard({ project }) {
           </div>
         </div>
 
-        {/* Links do projeto - Fica no final */}
         <div className="flex space-x-4 mt-auto">
           {project.projectLink !== '#' && (
             <a

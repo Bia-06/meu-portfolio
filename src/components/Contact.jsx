@@ -3,7 +3,6 @@ import { useSettings } from '../App';
 import { Send, Github, Linkedin, Instagram, Mail, Copy, Check } from 'lucide-react';
 import emailjs from 'emailjs-com';
 
-// Partículas flutuantes para o Contact
 const FloatingParticles = () => (
   <div className="absolute inset-0 overflow-hidden pointer-events-none">
     {[...Array(8)].map((_, i) => (
@@ -61,8 +60,8 @@ export default function Contact() {
 
     try {
       const result = await emailjs.send(
-        'service_2nrg3fy',     // Service ID (EmailJS)
-        'template_1837zuf',    // Template ID (EmailJS)
+        'service_2nrg3fy',     
+        'template_1837zuf',    
         {
           from_name: formData.name,
           from_email: formData.email,
@@ -76,7 +75,6 @@ export default function Contact() {
         setSubmitStatus('success');
         setFormData({ name: '', email: '', message: '' });
         
-        // Mensagem de sucesso em PT/EN
         alert(language === 'pt' 
           ? 'Mensagem enviada com sucesso! Entrarei em contato em breve.' 
           : 'Message sent successfully! I will contact you soon.'
@@ -112,7 +110,6 @@ export default function Contact() {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-          {/* Título */}
           <h2 className="text-4xl font-bold text-center text-gray-900 dark:text-white mb-4 animate-fade-in-down">
             {t.contact.title}
           </h2>
@@ -121,19 +118,15 @@ export default function Contact() {
             {t.contact.subtitle}
           </p>
 
-          {/* GRID */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
 
-            {/* Redes sociais */}
             <div className="space-y-6 animate-fade-in-left w-full">
               <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-200 mb-4">
                 {language === 'pt' ? 'Minhas Redes' : 'My Networks'}
               </h3>
 
-              {/* CARD MODEL */}
               <div className="space-y-4">
 
-                {/* LINKEDIN - Roxo */}
                 <a
                   href="https://www.linkedin.com/in/beatriz-pires-ab9564337/"
                   target="_blank"
@@ -151,7 +144,6 @@ export default function Contact() {
                   </span>
                 </a>
 
-                {/* INSTAGRAM - Rosa */}
                 <a
                   href="https://www.instagram.com/biaapires.bp/"
                   target="_blank"
@@ -169,7 +161,6 @@ export default function Contact() {
                   </span>
                 </a>
 
-                {/* GITHUB - Verde/Laranja */}
                 <a
                   href="https://github.com/Bia-06"
                   target="_blank"
@@ -187,7 +178,6 @@ export default function Contact() {
                   </span>
                 </a>
 
-                {/* EMAIL - LARANJA/AMARELO (COR NOVA!) */}
                 <div
                   className="flex items-center justify-between p-4 rounded-xl bg-white/60 dark:bg-gray-800/40 
                     backdrop-blur-md border border-orange-200/40 dark:border-orange-900/20 
@@ -222,9 +212,7 @@ export default function Contact() {
               </div>
             </div>
 
-            {/* Form - CORES MELHORADAS */}
             <form onSubmit={handleSubmit} className="space-y-6 animate-fade-in-right">
-              {/* Nome */}
               <div>
                 <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   {t.contact.name}
@@ -244,7 +232,6 @@ export default function Contact() {
                 />
               </div>
 
-              {/* Email */}
               <div>
                 <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   {t.contact.email}
@@ -264,7 +251,6 @@ export default function Contact() {
                 />
               </div>
 
-              {/* Mensagem */}
               <div>
                 <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   {t.contact.message}
@@ -284,7 +270,6 @@ export default function Contact() {
                 ></textarea>
               </div>
 
-              {/* Botão */}
               <div>
                 <button
                   type="submit"

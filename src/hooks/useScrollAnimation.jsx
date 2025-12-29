@@ -15,7 +15,6 @@ export const useScrollAnimation = () => {
         if (isVisible) {
           element.classList.add('animate-fade-in-up');
           
-          // Anima as barras de progresso
           const progressBars = element.querySelectorAll('[data-width]');
           progressBars.forEach(bar => {
             const width = bar.getAttribute('data-width');
@@ -28,7 +27,7 @@ export const useScrollAnimation = () => {
     };
 
     window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Verifica na carga inicial
+    handleScroll();
 
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);

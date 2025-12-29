@@ -10,10 +10,6 @@ module.exports = {
       fontFamily: {
         sans: ["Inter", "sans-serif"],
       },
-
-      /* ---------------------------
-         SUAS ANIMAÇÕES PERSONALIZADAS
-      -----------------------------*/
       keyframes: {
         fadeIn: {
           "0%": { opacity: "0", transform: "translateY(10px)" },
@@ -35,7 +31,6 @@ module.exports = {
           "0%": { opacity: "0", transform: "translateX(30px)" },
           "100%": { opacity: "1", transform: "translateX(0)" },
         },
-        // NOVAS ANIMAÇÕES PARA O HERO
         float: {
           "0%, 100%": { transform: "translateY(0px) rotate(0deg)" },
           "50%": { transform: "translateY(-20px) rotate(180deg)" },
@@ -75,7 +70,6 @@ module.exports = {
         "fade-in-up": "fade-in-up 0.8s ease-out",
         "fade-in-left": "fade-in-left 0.8s ease-out",
         "fade-in-right": "fade-in-right 0.8s ease-out",
-        // NOVAS ANIMAÇÕES
         "float": "float 6s ease-in-out infinite",
         "gradient-x": "gradient-x 3s ease infinite",
         "typewriter": "typewriter 2s steps(40) 1s both",
@@ -84,8 +78,6 @@ module.exports = {
         "pulse-slow": "pulse-slow 4s ease-in-out infinite",
         "spin-slow": "spin-slow 20s linear infinite",
       },
-
-      // Para o gradiente animado
       backgroundSize: {
         'size-200': '200% 200%',
       },

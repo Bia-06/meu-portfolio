@@ -11,7 +11,7 @@ O foco da construção deste site foi criar uma aplicação performática, com c
 
 Este projeto foi construído pensando em informações:
 
-- **Core** React, Vite, JavaScript
+- **Frontend:** React, Vite, JavaScript
 - **Estilização:** Tailwind CSS (Responsivo + Dark Mode)
 
 ## 🚀 Funcionalidades

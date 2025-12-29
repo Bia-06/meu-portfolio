@@ -4,7 +4,6 @@ import { useSettings } from '../App';
 export default function Footer() {
   const { t } = useSettings();
 
-  // Partículas flutuantes
   const FloatingParticles = () => (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
       {[...Array(5)].map((_, i) => (
@@ -24,7 +23,6 @@ export default function Footer() {
 
   return (
     <footer className="relative py-10 bg-gradient-to-br from-white via-purple-50 to-pink-50 dark:from-gray-900 dark:via-purple-900/10 dark:to-pink-900/10 overflow-hidden">
-      {/* Background Animado */}
       <FloatingParticles />
       
       <div className="container mx-auto px-6 text-center relative z-10">

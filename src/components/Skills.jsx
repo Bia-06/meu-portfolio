@@ -3,7 +3,7 @@ import { useSettings } from '../App';
 import { 
   SiReact, SiJavascript, SiNodedotjs, SiPython, SiMongodb,
   SiGithub, SiCplusplus, SiFigma, SiMysql, SiHtml5,
-  SiCss3, SiTailwindcss, SiTypescript, SiSupabase, SiVite // Ícones novos importados aqui
+  SiCss3, SiTailwindcss, SiTypescript, SiSupabase, SiVite 
 } from 'react-icons/si';
 import { FaJava } from 'react-icons/fa';
 import { VscVscode } from 'react-icons/vsc';
@@ -16,7 +16,6 @@ export default function Skills() {
     setIsVisible(true);
   }, []);
 
-  // Partículas flutuantes
   const FloatingParticles = () => (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
       {[...Array(12)].map((_, i) => (
@@ -34,17 +33,16 @@ export default function Skills() {
     </div>
   );
 
-  // Lista atualizada com TypeScript, Vite e Supabase
   const skills = [
     { name: 'React', icon: <SiReact className="text-cyan-400" /> },
-    { name: 'TypeScript', icon: <SiTypescript className="text-blue-600" /> }, // Novo
+    { name: 'TypeScript', icon: <SiTypescript className="text-blue-600" /> }, 
     { name: 'JavaScript', icon: <SiJavascript className="text-yellow-400" /> },
-    { name: 'Vite', icon: <SiVite className="text-violet-500" /> }, // Novo
+    { name: 'Vite', icon: <SiVite className="text-violet-500" /> }, 
     { name: 'Tailwind CSS', icon: <SiTailwindcss className="text-sky-400" /> },
     { name: 'HTML', icon: <SiHtml5 className="text-orange-500" /> },
     { name: 'CSS', icon: <SiCss3 className="text-blue-500" /> },
     { name: 'Node.js', icon: <SiNodedotjs className="text-green-500" /> },
-    { name: 'Supabase', icon: <SiSupabase className="text-emerald-500" /> }, // Novo
+    { name: 'Supabase', icon: <SiSupabase className="text-emerald-500" /> }, 
     { name: 'Python', icon: <SiPython className="text-yellow-300" /> },
     { name: 'Java', icon: <FaJava className="text-red-500" /> },
     { name: 'C++', icon: <SiCplusplus className="text-blue-600" /> },
@@ -60,10 +58,8 @@ export default function Skills() {
       id="skills" 
       className="relative py-16 bg-gradient-to-br from-white via-purple-50 to-pink-50 dark:from-gray-900 dark:via-purple-900/10 dark:to-pink-900/10 scroll-mt-16 overflow-hidden"
     >
-      {/* Background Animado */}
       <FloatingParticles />
       
-      {/* Gradiente animado no fundo */}
       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-purple-100/20 to-transparent dark:via-purple-900/5 animate-pulse-slow" />
       
       <div className="container mx-auto px-4 max-w-4xl relative z-10">
@@ -81,8 +77,7 @@ export default function Skills() {
 
           <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7 gap-[15px] justify-items-center">
             {skills.map((skill, i) => {
-              // Ajuste da lógica: com mais itens, o grid pode quebrar mais linhas.
-              // Mantendo a lógica de i >= 7 para tooltips, o que funciona bem para grids largos.
+
               const isSecondRow = i >= 7;
 
               return (
@@ -91,7 +86,6 @@ export default function Skills() {
                   className="group relative flex flex-col items-center animate-fade-in-up"
                   style={{ animationDelay: `${i * 80}ms` }}
                 >
-                  {/* Icon Card */}
                   <div
                     className="
                       w-20 h-20 rounded-xl 
@@ -107,7 +101,6 @@ export default function Skills() {
                     <div className="text-5xl drop-shadow-md">{skill.icon}</div>
                   </div>
 
-                  {/* Tooltip dynamic position */}
                   <div
                     className={`
                       absolute 
@@ -120,12 +113,9 @@ export default function Skills() {
                     <div className="bg-gray-900 dark:bg-gray-700 text-white text-xs py-1 px-2 rounded shadow-lg whitespace-nowrap animate-fadeIn relative">
                       {skill.name}
 
-                      {/* Arrow direction */}
                       {isSecondRow ? (
-                        // Tooltip abaixo → seta apontando para cima
                         <div className="absolute -top-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-gray-900 dark:bg-gray-700 rotate-45"></div>
                       ) : (
-                        // Tooltip acima → seta apontando para baixo
                         <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-gray-900 dark:bg-gray-700 rotate-45"></div>
                       )}
                     </div>

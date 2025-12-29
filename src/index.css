@@ -8,7 +8,6 @@ html {
 @tailwind components;
 @tailwind utilities;
 
-/* Garantir que as animações funcionem corretamente */
 .animate-fade-in-down {
   animation: fade-in-down 1s ease-out;
 }
@@ -17,12 +16,10 @@ html {
   animation: fade-in-up 0.8s ease-out;
 }
 
-/* Efeito de sombra mais pronunciado nos hovers */
 .hover\:shadow-3xl:hover {
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
 }
 
-/* Suavizar todas as transições */
 * {
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
