@@ -125,7 +125,7 @@ const content = {
       message: 'Message',
       send: 'Send Message',
     },
-    footer: 'Built with Tailwind, React, HTML, JavaScript and lots of ☕ by Beatriz Pires. 2025.',
+    footer: 'Built with Tailwind, React, HTML, JavaScript and lots of ☕ by Beatriz Pires. 2026.',
   },
 };
 
